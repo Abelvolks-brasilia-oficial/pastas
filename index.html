@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABELVOLKS BRASÍLIA OFICIAL</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      width: 100px;
+    }
+    h1 {
+      margin: 10px 0 0;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+    section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .price {
+      font-size: 24px;
+      color: #0f0;
+    }
+    .pix {
+      background: #222;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+    .form {
+      max-width: 400px;
+      margin: 20px auto;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      background: #0f0;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #888;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="favicon.ico" alt="Logo ABELVOLKS">
+    <h1>ABELVOLKS BRASÍLIA OFICIAL</h1>
+  </header>
+
+  <section>
+    <h2>🎵 Ritmos disponíveis</h2>
+    <p>Pisadinha • Sertanejo • Eletrofunk • House</p>
+    <p class="price">R$[VALOR FIXO] cada pasta</p>
+  </section>
+
+  <section>
+    <h2>📩 Solicite sua pasta</h2>
+    <form class="form" onsubmit="mostrarQRCode(event)">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <input type="text" name="telefone" placeholder="WhatsApp" required>
+      <button type="submit">Enviar pedido</button>
+    </form>
+    <p style="font-size: 12px; color: #888">Após o envio do pedido, o QR Code para pagamento Pix será exibido abaixo.</p>
+  </section>
+
+  <section id="qrcode" class="pix hidden">
+    <h2>🔄 Pagamento via Pix</h2>
+    <p>Escaneie o QR Code abaixo com seu aplicativo bancário para concluir o pagamento:</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Qr-code-verde-pix.png" alt="QR Code Pix" width="250" />
+    <p style="font-size: 12px; color: #888">Após o pagamento, o link será enviado manualmente por e-mail ou WhatsApp.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 ABELVOLKS BRASÍLIA OFICIAL — Todos os direitos reservados
+  </footer>
+
+  <script>
+    function mostrarQRCode(event) {
+      event.preventDefault();
+      document.getElementById('qrcode').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
